@@ -22,15 +22,32 @@ st.write("Histograma")
 sns.histplot(df[selected_column])
 st.pyplot()
 
-st.write("Scatter plot")
+st.write("Diagrama de dispersión")
 x_axis = st.sidebar.selectbox('Select the x-axis', df.columns)
 y_axis = st.sidebar.selectbox('Select the y-axis', df.columns)
 
 fig = px.scatter(df, x=x_axis, y=y_axis)
 st.plotly_chart(fig)
 
-st.write("Pair Plot")
+st.write("Parcela de pares")
 sns.pairplot(df, hue='class')
 st.pyplot()
 st.write("Description of the data")
 st.table(df.describe())
+
+st.header('Matriz de Correlación')
+
+corr = df.corr()
+sns.heatmap(corr, annot=True)
+st.pyplot()
+
+st.header('Diagrama de caja')
+
+fig = px.box(df, y=selected_column)
+st.plotly_chart(fig)
+
+selected_class = st.sidebar.selectbox('Select a class to visualize', df['class'].unique())
+
+if st.sidebar.button('Show Violin Plot'):
+    fig = px.violin(df[df['class'] == selected_class], y=selected_column)
+    st.plotly_chart(fig)
