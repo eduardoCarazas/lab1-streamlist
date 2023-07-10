@@ -9,7 +9,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Loading dataset 
-df = pd.read_csv('https://raw.githubusercontent.com/eduardoCarazas/lab1-streamlist/main/Lista%20proveedores%202023_10.07.2023.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/eduardoCarazas/lab1-streamlist/main/Casos%20de%20Anemia%20(Cuzco)%202010-2020.csv')
 
 st.title('Exploratory Data Analysis of the Iris Dataset')
 st.header('This app allows you to explore the Iris dataset and visualize the data using various plots.')
