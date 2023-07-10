@@ -21,3 +21,16 @@ selected_column = st.sidebar.selectbox('Select a column to visualize', df.column
 st.write("Histograma")
 sns.histplot(df[selected_column])
 st.pyplot()
+
+st.write("Scatter plot")
+x_axis = st.sidebar.selectbox('Select the x-axis', df.columns)
+y_axis = st.sidebar.selectbox('Select the y-axis', df.columns)
+
+fig = px.scatter(df, x=x_axis, y=y_axis)
+st.plotly_chart(fig)
+
+st.write("Pair Plot")
+sns.pairplot(df, hue='class')
+st.pyplot()
+st.write("Description of the data")
+st.table(df.describe())
