@@ -19,5 +19,5 @@ st.dataframe(df)
 selected_column = st.sidebar.selectbox('Select a column to visualize', df.columns)
 
 st.write("Histograma")
-# sns.histplot(df[selected_column])
-# st.pyplot()
+sns.histplot(df[selected_column])
+st.pyplot()
