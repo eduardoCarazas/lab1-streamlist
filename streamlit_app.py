@@ -9,7 +9,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Loading dataset 
-df = pd.read_csv('https://raw.githubusercontent.com/eduardoCarazas/lab1-streamlist/main/delitos-denunciados-2023-05_11.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/eduardoCarazas/lab1-streamlist/main/DATASET_GASTOS_PAGO_SERVICIOS_BASICOS_HNAL.csv')
 
 st.title('Análisis exploratorio de datos del dataset seleccionado')
 st.header('Esta aplicación permite explorar el dataset seleccionado y visualizar los datos utilizando varios gráficos.')
