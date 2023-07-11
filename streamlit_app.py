@@ -28,3 +28,9 @@ y_axis = st.sidebar.selectbox('Select the y-axis', df.columns)
 
 fig = px.scatter(df, x=x_axis, y=y_axis)
 st.plotly_chart(fig)
+
+st.header('Matriz de Correlación')
+
+corr = df.corr()
+sns.heatmap(corr, annot=True)
+st.pyplot()
